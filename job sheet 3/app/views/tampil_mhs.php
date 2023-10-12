@@ -13,6 +13,7 @@ include '../classes/database.php';
 
 $db = new database;
 ?>
+
 <div class="px-3 py-4">
 <a href="tampil_mhs.php"class="btn btn-primary">Mahasiswa</a>
 <a href="tampil_dsn.php"class="btn btn-primary">Dosen</a>
