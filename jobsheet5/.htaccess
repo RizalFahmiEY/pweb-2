@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteBase /jobsheet5/
+RewriteBase /pweb%202/jobsheet5/
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
