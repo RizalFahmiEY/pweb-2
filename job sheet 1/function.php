@@ -1,58 +1,55 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Function Php</title>
+    <title>Functions</title>
 </head>
-   
 
 <body>
-    <h3>Menghitung Luas Persegi</h3>
+    <h1>Masukkan Bilangan</h1>
     <form method="POST" action="">
-        <label for="sisi">sisi:</label>
-        <input type="text" name="sisi" id="sisi">
-        <input type="submit" value="Cek">
+        <table>
+            <tr>
+                <td>Masukkan Panjang</td>
+                <td>:</td>
+                <td><input type="number" name="panjang" placeholder="panjang"><br></td>
+            </tr>
+            <tr>
+                <td>Masukkan Lebar</td>
+                <td>:</td>
+                <td><input type="number" name="lebar" placeholder="lebar"><br></td>
+            </tr>
+            <tr>
+                <td>Masukkan jari-jari</td>
+                <td>:</td>
+                <td><input type="number" name="jari" placeholder="jari"><br></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Hasil</button></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
     </form>
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $sisi = $_POST["sisi"];
+    <?Php
+    if (isset($_POST['panjang'])) {
+        $p = $_POST['panjang'];
+        $l = $_POST['lebar'];
+        $r = $_POST['jari'];
 
-        if (!is_numeric($sisi)) {
-            echo "Silakan masukkan angka.";
-        } 
-        else {
-            $luas = $sisi * $sisi;
-            echo "Sisi persegi: $sisi <br>";
-            echo "Luas persegi: $luas";
+        function persegi_panjang($p, $l)
+        {
+            return ($p * $l);
         }
-
-    }
-    
-    
-    ?>
-
-    <h3>Menghitung Luas Lingkaran</h3>
-    <form method="POST" action="">
-        <label for="rusuk">rusuk:</label>
-        <input type="text" name="rusuk" id="rusuk">
-        <input type="submit" value="Cek">
-    </form>
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $rusuk = $_POST["rusuk"];
-
-        if (!is_numeric($rusuk)) {
-            echo "Silakan masukkan panjang rusuk.";
-        } 
-        else {
-            $luas = 3.14 * $rusuk  *$rusuk;
-            echo "Panjang rusuk lingkaran: $rusuk <br>";
-            echo "Luas lingkaran: $luas";
+        function lingkaran($r)
+        {
+            return 3.14 * $r * $r;
         }
-
+        echo "Luas Persegi Panjang : " . persegi_panjang($p, $l) . "<br>";
+        echo "Luas lingkaran : " . lingkaran($r) . "<br>";
     }
-    
     ?>
-
 </body>
+
 </html>
